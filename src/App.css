@@ -49,9 +49,7 @@ body {
 .search button:hover {
     cursor: pointer;
 }
-.empty {
-    background: #c99393;
-}
+
 .empty h3 {
     color: red;
     font-size: 40px;
@@ -115,6 +113,7 @@ transition: 0.5s ease;
 p.mtype {
     text-align: center;
     color: white;
+    text-transform: capitalize;
 }
 .moviecard .myear {
     margin-right: 40px;
