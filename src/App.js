@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <div className='app'>
-      {clicked && <MovieModal movie={clicked} setClicked={setClicked}/>}
+      {clicked && <MovieModal movie={clicked} setClicked={setClicked} />}
       <div className="header">
         <h1><span> D'</span>movies</h1>
         <div className='search'>
@@ -51,7 +51,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className='container'>
           {movies.map((m) => (
-            <MovieCard props={m} key={m.imdbID} searchMovie={searchMovie}/>
+            <MovieCard props={m} key={m.imdbID} searchMovie={searchMovie} />
           ))}
         </div>
       ) : (
