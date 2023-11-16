@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
+import MovieModal from './MovieModal';
 import SearchIcon from './search.svg'
 import './App.css';
 
-const API_URL = "http://www.omdbapi.com?apikey=5cab2eae";
+const API_URL = "https://www.omdbapi.com?apikey=5cab2eae";
 
 const App = () => {
   const [movies, setMovies] = useState("");
   const [movie, setMovie] = useState("");
+  const [clicked, setClicked] = useState(null)
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
     console.log(data);
     setMovies(data.Search);
+  };
+
+  const searchMovie = async (id) => {
+    const response = await fetch(`${API_URL}&i=${id}`);
+    const data = await response.json();
+    console.log(data);
+    setClicked(data);
   };
 
   useEffect(() => {
@@ -29,6 +38,7 @@ const App = () => {
 
   return (
     <div className='app'>
+      {clicked && <MovieModal movie={clicked} setClicked={setClicked}/>}
       <div className="header">
         <h1><span> D'</span>movies</h1>
         <div className='search'>
@@ -41,7 +51,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className='container'>
           {movies.map((m) => (
-            <MovieCard props={m} key={m.imdbID} />
+            <MovieCard props={m} key={m.imdbID} searchMovie={searchMovie}/>
           ))}
         </div>
       ) : (
