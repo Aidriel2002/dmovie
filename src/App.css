@@ -18,6 +18,7 @@ body {
 .header h1{
     color: white;
     font-size: 50px;
+    cursor: pointer;
 }
 .header h1 span {
     color: red;
@@ -163,16 +164,17 @@ p.mtype {
   }
   
   .close-button {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    color: red;
-    border: none;
-    padding: 8px 12px;
-    font-size: 50px;
-    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px;
     border-radius: 5px;
-    background: transparent;
+    cursor: pointer;
+    background: #a80520;
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .close-button:hover {
+    background: #96051d;
   }
   .star p span {
     color: yellow;

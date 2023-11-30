@@ -2,9 +2,7 @@ export default function MovieModal({ movie, setClicked }) {
   return (
     <div className="modal-container">
       <div className="modal">
-        <button className="close-button" onClick={() => setClicked(null)}>
-          X
-        </button>
+        
         <img src={movie.Poster} alt="poster" />
         <h1>{movie.Title}</h1>
         <div className="star">
@@ -12,7 +10,10 @@ export default function MovieModal({ movie, setClicked }) {
         </div>
         <p>Genre: {movie.Genre}</p>
         <p className="plot">{movie.Plot}</p>
-        <button className="mbttn"> Watch now</button>
+        <a href="https://www.youtube.com/watch?v=6_fNGTGPuVs" ><button className="mbttn"> Watch now</button></a>
+        <button className="close-button" onClick={() => setClicked(null)}>
+          Close
+        </button>
 
       </div>
     </div>
